@@ -3,22 +3,21 @@
 # price.py
 import codecs
 def inputstation(a):	#駅を入力させる関数
-	global flag
-	flag = False
-	while 1:
-		if a==1:
-			print('乗車駅を入力してください:', end='')
-		if a==2:
-			print('降車駅を入力してください:', end='')
-		stname = input()
-
-		if not stname:
-			flag = True
-		if not stname or stname in station:	#入力された文字が空か辞書stationにあるときbreak
-			break
-		print("その駅は存在しません")
-		print('******************')
-	return stname
+    global flag
+    flag = False
+    while 1:
+        if a==1:
+            print('乗車駅を入力してください:', end='')
+	if a==2:
+	    print('降車駅を入力してください:', end='')
+        stname = input()
+	if not stname:
+	    flag = True
+	if not stname or stname in station:	#入力された文字が空か辞書stationにあるときbreak
+	    break
+	print("その駅は存在しません")
+	print('******************')
+    return stname
 
 print ('*** とさでん運賃計算 ***')
 f = codecs.open('new_stationlist.dat', 'r', 'utf-8')
