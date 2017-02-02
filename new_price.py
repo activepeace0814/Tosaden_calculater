@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 # price.py
 import codecs
-def inputstation(a):
+def inputstation(a):	#駅を入力させる関数
 	global flag
 	flag = False
-	while 1:												#乗車駅の入力
+	while 1:
 		if a==1:
 			print('乗車駅を入力してください:', end='')
 		if a==2:
@@ -14,7 +14,7 @@ def inputstation(a):
 
 		if not stname:
 			flag = True
-		if not stname or stname in station:				#入力された文字が空か辞書stationにあるときbreak
+		if not stname or stname in station:	#入力された文字が空か辞書stationにあるときbreak
 			break
 		print("その駅は存在しません")
 		print('******************')
@@ -39,11 +39,16 @@ while 1:
 f.close()
 
 while 1:
-	s1 = inputstation(1)
-	if flag:
-		break
+	while 1:	#駅名入力ループ
+		s1 = inputstation(1)
+		if flag:
+			break
 
-	s2 = inputstation(2)
+		s2 = inputstation(2)
+		if s1==s2:
+			print("同じ駅が入力されています")
+		else:
+			break
 	if flag:
 		break
 
@@ -102,5 +107,6 @@ while 1:
 
 		elif sa==6:
 			print ('運賃は220円です')
+		print('******************')
 
 print ('*** さよなら ***')
